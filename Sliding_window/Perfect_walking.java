@@ -5,7 +5,7 @@ import java.util.Map;
 import java.util.Scanner;
 
 public class Perfect_walking {
-
+    //https://fcqian.blog.csdn.net/article/details/128062246
 }
 class Perfect_walking_Solution {
     public static void main(String[] args) {
