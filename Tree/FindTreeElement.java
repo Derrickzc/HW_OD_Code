@@ -3,7 +3,73 @@ package Tree;
 import java.util.*;
 
 public class FindTreeElement {
+    //https://blog.csdn.net/caibiyuge/article/details/129178928
+}
 
+
+
+class Main {
+    // dfs写法；
+    static ArrayList<Integer[]> nodes;
+
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+        int n = Integer.parseInt(sc.nextLine());
+
+        nodes = new ArrayList<>();
+        for (int i = 0; i < n; i++) {
+            Integer[] node =
+                    Arrays.stream(sc.nextLine().split(" ")).map(Integer::parseInt).toArray(Integer[]::new);
+            nodes.add(node);
+        }
+
+        int tx = sc.nextInt();
+        int ty = sc.nextInt();
+
+        System.out.println(getResult(nodes, tx, ty));
+    }
+
+    public static String getResult(ArrayList<Integer[]> nodes, int tx, int ty) {
+        ArrayList<ArrayList<Integer>> matrix = new ArrayList<>();
+        dfs(matrix, nodes.get(0), 0);
+
+        if (tx < matrix.size() && ty < matrix.get(tx).size()) {
+            return "{" + matrix.get(tx).get(ty) + "}";
+        } else {
+            return "{}";
+        }
+    }
+
+    public static void dfs(ArrayList<ArrayList<Integer>> matrix, Integer[] node, Integer level) {
+        if (node == null) return;
+
+        int val = node[0];
+
+        if (level < matrix.size()) {
+            matrix.get(level).add(val);
+        } else {
+            ArrayList<Integer> list = new ArrayList<>();
+            list.add(val);
+            matrix.add(list);
+        }
+
+        // 将二叉树处理逻辑，改成多叉树
+        //    if (node.length > 1) {
+        //      int left = node[1];
+        //      dfs(matrix, nodes.get(left), level + 1);
+        //    }
+        //
+        //    if (node.length > 2) {
+        //      int right = node[2];
+        //      dfs(matrix, nodes.get(right), level + 1);
+        //    }
+
+        for (int i = 1; i < node.length; i++) {
+            int child = node[i];
+            dfs(matrix, nodes.get(child), level + 1);
+        }
+    }
 }
 
 
@@ -14,6 +80,8 @@ public class FindTreeElement {
  *查找树中元素
  */
  class HW057 {
+     //这道题的preQue和curQue只起到了计数的作用，也可以用两个变量代替
+     //preQue表示上一层有多少个节点， curQue表示当前有多少个节点， 随着level++， preQueue也会越来越多；同时preQueue也和curQueue一直在交换； 老哥思路挺巧妙的，是咋想到的！！
     public static void main(String[] args) {
         Scanner sc=new Scanner(System.in);
         while(sc.hasNext()){
