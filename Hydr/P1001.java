@@ -3,7 +3,9 @@ package Hydr;
 
 import java.io.*;
 import java.util.Arrays;
-
+//出现git无法 push的问题
+//参考文献1 https://www.cnblogs.com/liuyangjun/p/16615552.html 【主要是配置 IdentityFile 这个属性】
+//参考文献2 https://blog.csdn.net/qq_51738873/article/details/128193393
 public class P1001 {
     static BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
     static BufferedWriter writer = new BufferedWriter(new OutputStreamWriter(System.out));
