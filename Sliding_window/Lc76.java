@@ -6,6 +6,12 @@ public class Lc76 {
     public static void main(String[] args) {
 
     }
+
+    public String minWindow(String s, String t)  {
+        // containsCharacter 一次成功； 则丧失用途
+        return "";
+    }
+
 }
 
 class Lc76_Solution {
