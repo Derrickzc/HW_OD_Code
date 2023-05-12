@@ -6,7 +6,6 @@ import java.util.LinkedList;
 
 public class Interval_Overlap {
     static BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
-
     static BufferedWriter writer = new BufferedWriter(new OutputStreamWriter(System.out));
 
     public static void main(String[] args) throws IOException {
@@ -57,6 +56,7 @@ public class Interval_Overlap {
     }
 }
 /*
+题目：区间交叠问题
     给定坐标轴上的一组线段，线段的起点和终点均为整数并且长度不小于1，请你从中找到最少数量的线段，这些线段可以覆盖柱所有线段。
     输入描述
         第一行输入为所有线段的数量，不超过10000，后面每行表示一条线段，格式为"x,y"，x和y分别表示起点和终点，取值范围是[-10^5，10^5]。
