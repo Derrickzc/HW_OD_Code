@@ -28,17 +28,24 @@ public class Crossing_River {
             ans = Math.min(ans, count);
             return ;
         }
+
+        //根据当前羊+狼的个数，直接最后一次性运完；   如果缺少这个条件会报错！！
+        if (m_Sheep + n_Wolf <= x_Ship) {
+            ans = Math.min(ans, count + 1);
+            return;
+        }
+
         for (int i = 0; i <= m_Sheep; i++) {
             for (int j = 0; j <= n_Wolf; j++) {
                 if (i == 0 && j == 0) continue;
                 if (i + j > x_Ship) continue;
 
                 if (m_Sheep - i <= n_Wolf - j && m_Sheep - i != 0) continue;
-                // 此岸有羊（运输后此岸仍然存在羊），才要进行此判断； 这就是为什么要&& 一个新判断
+                // 此岸有羊（运输后此岸仍然存在羊， 如果此岸运完后没有羊的话，不需要满足此if条件   ），才要进行此判断； 这就是为什么要&& 一个新判断
                 if (cross_Sheep + i <= cross_Wolf + j && cross_Sheep + i != 0) break;
                 // 对岸有羊（运输后的羊数量必须存在！），才需要进行此判断  ； 这就是为什么要 &&一个新判断
                 if (cross_Sheep + i == 0 && cross_Wolf + j >= x_Ship) break;
-                //为了加快运算速度。
+                //为了加快运算速度。 对岸没羊，但是对岸狼已经超过船载量，即下次即使整船都运羊，也无法保证对岸羊 > 对岸狼
                 dfs(m_Sheep - i, n_Wolf - j, x_Ship, cross_Sheep + i, cross_Wolf + j, count + 1);
             }
         }
