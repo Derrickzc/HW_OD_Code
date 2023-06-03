@@ -1,5 +1,6 @@
-package TwoPointer;
+package LeetCode;
 
+// 双指针
 public class LC165 {
     public static void main(String[] args) {
         System.out.println(compareVersion("1.00.1", "1.0.2"));

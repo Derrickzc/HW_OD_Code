@@ -1,7 +1,8 @@
-package Sliding_window;
+package LeetCode;
 
 import java.util.HashMap;
 
+//be related to Problem Perfect_walking
 public class Lc76 {
     public static void main(String[] args) {
 

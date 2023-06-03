@@ -5,9 +5,6 @@ import java.util.*;
 public class FindTreeElement {
     //https://blog.csdn.net/caibiyuge/article/details/129178928
 }
-
-
-
 class Main {
     // dfs写法；
     static ArrayList<Integer[]> nodes;
