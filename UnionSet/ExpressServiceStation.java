@@ -35,9 +35,10 @@ public class ExpressServiceStation {
          public UnionSet(int N) {
              count = N;
              fa = new int[N];
-             for (int i = 0; i < N; i++) {
-                 fa[i] = i;
-             }
+//             for (int i = 0; i < N; i++) {
+//                 fa[i] = i;
+//             }
+             Arrays.setAll(fa, p -> p);
          }
 
          public void union(int x, int y) {
