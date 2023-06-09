@@ -6,7 +6,6 @@ import java.io.*;
 
 public class Attendance_Information {
     static BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
-
     static BufferedWriter writer = new BufferedWriter(new OutputStreamWriter(System.out));
     public static void main(String[] args) throws IOException {
         int N = Integer.parseInt(reader.readLine());
