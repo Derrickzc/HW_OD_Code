@@ -2,7 +2,15 @@ package CodeForces;
 
 import java.io.*;
 import java.util.Arrays;
+/*
+Input
+The first line contains integer n (1 ≤ n ≤ 5·105), showing how many numbers are in the array. The second line contains n integers a[1], a[2], ..., a[n] (|a[i]| ≤  109) — the elements of array a.
 
+Output
+Print a single integer — the number of ways to split the array into three parts with the same sum.
+
+前缀和分三段
+ */
 public class Round266C {
     static BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
     static BufferedWriter writer = new BufferedWriter(new OutputStreamWriter(System.out));
