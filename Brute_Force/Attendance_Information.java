@@ -74,6 +74,7 @@ public class Attendance_Information {
             if (i >= 6) {
                 if (present < 4) return false;
                 if (Source[i - 6].equals("present")) present--;
+                // reverse logic; instead of count absent/late/leave early, just count present.
             }
         }
         return true;
