@@ -8,6 +8,10 @@ public class Charade {
     //猜字谜
     /*
         注意TreeSet的使用； 使用Stream；删除掉最后一个，逗号
+        TreeSet function: Force Character Orderly AND Remove the same.
+        对于某个谜面和谜底单词，满足下面任一条件都表示猜中：
+            变换顺序以后一样的，比如通过变换w和e的顺序，“nwes”跟“news”是可以完全对应的；
+            字母去重以后是一样的，比如“woood”和“wood”是一样的，它们去重后都是“wod”
      */
     static BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
     static BufferedWriter writer = new BufferedWriter(new OutputStreamWriter(System.out));

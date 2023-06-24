@@ -25,6 +25,7 @@ public class Crossing_River {
     static void dfs(int m_Sheep, int n_Wolf, int x_Ship, int cross_Sheep, int cross_Wolf, int count) {
         if (m_Sheep < 0 || n_Wolf < 0 || x_Ship <= 0) return ;
         if (m_Sheep == 0 && n_Wolf == 0) {
+            //End Condition && Find Min ans.
             ans = Math.min(ans, count);
             return ;
         }
